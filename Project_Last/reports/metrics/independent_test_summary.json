@@ -1,0 +1,104 @@
+{
+  "evaluation_type": "one_time_independent_test",
+  "selection_rule": "Models were selected by validation price MAE before test access.",
+  "selected_models": {
+    "open": "rolling_mean_20",
+    "close": "naive"
+  },
+  "pretest_training": {
+    "rows": 1709,
+    "date_min": "2018-08-28",
+    "date_max": "2025-08-12",
+    "last_target_date": "2025-08-13"
+  },
+  "test": {
+    "rows": 191,
+    "date_min": "2025-08-14 00:00:00",
+    "date_max": "2026-05-29 00:00:00"
+  },
+  "selected_model_test_metrics": [
+    {
+      "model": "naive",
+      "target": "close",
+      "selected_from_validation": true,
+      "price_mae": 4631.413612565445,
+      "price_rmse": 7380.27653109236,
+      "price_smape_pct": 2.765703593818745,
+      "return_mae": 0.027915653118581768,
+      "direction_accuracy": 0.010471204188481676
+    },
+    {
+      "model": "rolling_mean_20",
+      "target": "open",
+      "selected_from_validation": true,
+      "price_mae": 3521.8566905446105,
+      "price_rmse": 5466.885009603476,
+      "price_smape_pct": 2.091203004808887,
+      "return_mae": 0.021074390267880362,
+      "direction_accuracy": 0.5706806282722513
+    }
+  ],
+  "all_test_metrics": [
+    {
+      "model": "rolling_mean_20",
+      "target": "close",
+      "selected_from_validation": false,
+      "price_mae": 4554.74729034834,
+      "price_rmse": 7260.23281120461,
+      "price_smape_pct": 2.7297226812231465,
+      "return_mae": 0.027556401815917793,
+      "direction_accuracy": 0.5759162303664922
+    },
+    {
+      "model": "ridge",
+      "target": "close",
+      "selected_from_validation": false,
+      "price_mae": 4601.996836323477,
+      "price_rmse": 7314.571391664735,
+      "price_smape_pct": 2.74531091132667,
+      "return_mae": 0.02771123063848363,
+      "direction_accuracy": 0.5759162303664922
+    },
+    {
+      "model": "naive",
+      "target": "close",
+      "selected_from_validation": true,
+      "price_mae": 4631.413612565445,
+      "price_rmse": 7380.27653109236,
+      "price_smape_pct": 2.765703593818745,
+      "return_mae": 0.027915653118581768,
+      "direction_accuracy": 0.010471204188481676
+    },
+    {
+      "model": "ridge",
+      "target": "open",
+      "selected_from_validation": false,
+      "price_mae": 3384.568509804707,
+      "price_rmse": 5395.516393185858,
+      "price_smape_pct": 2.0142723023869142,
+      "return_mae": 0.020300528918176113,
+      "direction_accuracy": 0.581151832460733
+    },
+    {
+      "model": "naive",
+      "target": "open",
+      "selected_from_validation": false,
+      "price_mae": 3479.057591623037,
+      "price_rmse": 5471.683412966046,
+      "price_smape_pct": 2.0710685249296903,
+      "return_mae": 0.020869837360165754,
+      "direction_accuracy": 0.02617801047120419
+    },
+    {
+      "model": "rolling_mean_20",
+      "target": "open",
+      "selected_from_validation": true,
+      "price_mae": 3521.8566905446105,
+      "price_rmse": 5466.885009603476,
+      "price_smape_pct": 2.091203004808887,
+      "return_mae": 0.021074390267880362,
+      "direction_accuracy": 0.5706806282722513
+    }
+  ],
+  "warning": "The independent test has now been opened. It must not be reused for further model selection or hyperparameter tuning."
+}

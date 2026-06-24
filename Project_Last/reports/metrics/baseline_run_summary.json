@@ -1,0 +1,133 @@
+{
+  "strategy": "chronological_80_10_10_with_boundary_purge",
+  "raw_boundaries": {
+    "train_end_index_exclusive": 1520,
+    "validation_end_index_exclusive": 1710
+  },
+  "purge_rows_per_train_validation_boundary": 1,
+  "train": {
+    "rows": 1519,
+    "date_min": "2018-08-28",
+    "date_max": "2024-10-31",
+    "last_target_date": "2024-11-01"
+  },
+  "validation": {
+    "rows": 189,
+    "date_min": "2024-11-04",
+    "date_max": "2025-08-12",
+    "last_target_date": "2025-08-13"
+  },
+  "test": {
+    "rows": 191,
+    "date_min": "2025-08-14",
+    "date_max": "2026-05-29",
+    "status": "reserved_not_evaluated"
+  },
+  "feature_count": 32,
+  "feature_columns": [
+    "return_1d",
+    "return_2d",
+    "return_3d",
+    "return_5d",
+    "return_10d",
+    "return_20d",
+    "close_to_ma_5",
+    "close_to_ma_10",
+    "close_to_ma_20",
+    "close_to_ma_60",
+    "volatility_5d",
+    "volatility_10d",
+    "volatility_20d",
+    "volume_to_ma_5",
+    "volume_to_ma_10",
+    "volume_to_ma_20",
+    "intraday_return",
+    "open_gap_return",
+    "intraday_range",
+    "close_position_in_range",
+    "rsi_14",
+    "rsi_change_1d",
+    "macd",
+    "macd_signal",
+    "macd_hist",
+    "macd_change_1d",
+    "macd_signal_change_1d",
+    "macd_hist_change_1d",
+    "foreign_ownership_pct",
+    "foreign_ownership_change_1d",
+    "day_of_week",
+    "month"
+  ],
+  "random_seed": 42,
+  "ridge_alpha_candidates": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "ridge_cv": "TimeSeriesSplit(n_splits=5, gap=1)",
+  "validation_metrics": [
+    {
+      "model": "naive",
+      "target": "close",
+      "price_mae": 881.4814814814815,
+      "price_rmse": 1189.5043652381587,
+      "price_smape_pct": 1.5229551040447296,
+      "return_mae": 0.015279330607414475,
+      "direction_accuracy": 0.07407407407407407,
+      "selected_alpha": NaN
+    },
+    {
+      "model": "ridge",
+      "target": "close",
+      "price_mae": 884.9760392371398,
+      "price_rmse": 1193.4982808931131,
+      "price_smape_pct": 1.5295675177626291,
+      "return_mae": 0.01534545373105541,
+      "direction_accuracy": 0.43386243386243384,
+      "selected_alpha": 1000.0
+    },
+    {
+      "model": "rolling_mean_20",
+      "target": "close",
+      "price_mae": 898.9574304184097,
+      "price_rmse": 1207.320064563963,
+      "price_smape_pct": 1.5536482802182177,
+      "return_mae": 0.015586846779239176,
+      "direction_accuracy": 0.4656084656084656,
+      "selected_alpha": NaN
+    },
+    {
+      "model": "rolling_mean_20",
+      "target": "open",
+      "price_mae": 509.10224160406136,
+      "price_rmse": 760.1505011055679,
+      "price_smape_pct": 0.8901576586508401,
+      "return_mae": 0.008919388714322803,
+      "direction_accuracy": 0.5661375661375662,
+      "selected_alpha": NaN
+    },
+    {
+      "model": "ridge",
+      "target": "open",
+      "price_mae": 520.6618324064235,
+      "price_rmse": 755.7719902773732,
+      "price_smape_pct": 0.9092082003161074,
+      "return_mae": 0.009110048678654118,
+      "direction_accuracy": 0.48677248677248675,
+      "selected_alpha": 1000.0
+    },
+    {
+      "model": "naive",
+      "target": "open",
+      "price_mae": 526.984126984127,
+      "price_rmse": 765.4579844288816,
+      "price_smape_pct": 0.9174521600748843,
+      "return_mae": 0.009192630599776859,
+      "direction_accuracy": 0.07407407407407407,
+      "selected_alpha": NaN
+    }
+  ]
+}

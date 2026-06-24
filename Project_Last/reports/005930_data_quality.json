@@ -1,0 +1,39 @@
+{
+  "source_file": "005930_2016to2026_수정됨.txt",
+  "clean_file": "data\\processed\\005930_2016to2026_clean.csv",
+  "excluded_file": "reports\\005930_excluded_rows.csv",
+  "source_rows": 2452,
+  "clean_rows": 1961,
+  "excluded_rows": 491,
+  "duplicate_dates": 0,
+  "excluded_by_reason": {
+    "before_2018_06_01": 491,
+    "invalid_ohlc": 4,
+    "nonpositive_price": 3,
+    "nonpositive_volume": 3
+  },
+  "clean_date_min": "2018-06-01",
+  "clean_date_max": "2026-06-01",
+  "chronological_order": true,
+  "remaining_missing_values": {
+    "날짜": 0,
+    "종가": 0,
+    "시가": 0,
+    "고가": 0,
+    "저가": 0,
+    "거래량": 0,
+    "변동 %": 1,
+    "RSI(14)": 14,
+    "MACD(12,26)": 0,
+    "MACD_SIGNAL(9)": 0,
+    "MACD_HIST": 0,
+    "외국인소진율": 0
+  },
+  "source_volume_unit_counts": {},
+  "data_start_date": "2018-06-01",
+  "warnings": [
+    "액면분할 이전 구간의 영향을 피하기 위해 2018-06-01 이전 데이터는 학습 대상에서 제외했다.",
+    "거래소 공식 거래일 캘린더와의 대조는 아직 수행하지 않았다. 현재 단계에서는 주말, 거래량 결측 및 OHLC 논리 규칙을 사용했다.",
+    "정제 후 첫 변동률과 초기 14개 RSI 값은 계산에 필요한 과거 데이터가 없어 결측인 것이 정상이다."
+  ]
+}

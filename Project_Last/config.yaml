@@ -1,0 +1,32 @@
+data:
+  model_dataset: data/processed/005930_model_dataset.csv
+  feature_count: 32
+
+split:
+  method: chronological
+  train_ratio: 0.8
+  validation_ratio: 0.1
+  test_ratio: 0.1
+  boundary_purge_rows: 1
+
+cross_validation:
+  method: expanding_time_series
+  n_splits: 5
+  gap: 1
+
+ridge:
+  alpha_candidates:
+    - 0.01
+    - 0.1
+    - 1.0
+    - 10.0
+    - 100.0
+    - 1000.0
+
+training:
+  random_seed: 42
+  target_type: next_day_return
+  test_status: evaluated_once
+  test_evaluated_models:
+    open: rolling_mean_20
+    close: naive
